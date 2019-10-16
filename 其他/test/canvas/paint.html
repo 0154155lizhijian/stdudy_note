@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>基本图形</title>
+  <style>
+    #canvas {
+        background: yellow;
+        /* width: 300px;
+        height: 300px; */
+    }
+</style>
+</head>
+<body>
+  <canvas id="canvas" width="300px" height="300px"></canvas>
+  <script>
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext("2d");
+    //清空子路径列表开始一个新的路径
+    context.beginPath();
+    //CanvasRenderingContext2D.arc() 是 Canvas 2D API 绘制圆弧路径的方法
+    // void ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+    context.arc(100, 100, 50, 0, Math.PI * 2, true);
+    context.closePath();
+    context.fillStyle = 'rgb(255,255,255)';
+    context.fill();
+  </script>
+</body>
+</html>
